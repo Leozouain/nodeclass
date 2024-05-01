@@ -18,15 +18,25 @@ router.get("/", (req: Request, res: Response) => {
   res.render("home", {
     user: user,
     showOld,
+    products: [
+      { title: "Produto X", price: 10 },
+      { title: "Produto y", price: 15 },
+      { title: "Produto w", price: 20 },
+    ],
+    frasesDoDia: ["Uma coisa qualquer", "Outra frase qualquer"],
   });
 });
 
 router.get("/contato", (req: Request, res: Response) => {
-  res.send("Formulario de Contato");
+  res.render("contato");
 });
 
 router.get("/sobre", (req: Request, res: Response) => {
-  res.send("Pagina Institucional sobre a empresa");
+  res.render("sobre");
+});
+
+router.get("/nome", (req: Request, res: Response) => {
+  res.render("sobre");
 });
 
 export default router;

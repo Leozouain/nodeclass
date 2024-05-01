@@ -8,7 +8,29 @@
 <h1>Title of the page</h1>
 <hr/>
 
-Hey Ho Lets Go {{user.name}} u r {{#showOld}}Adult{{/showOld}}!
+Hey Ho Lets Go {{user.name}} u r {{#showOld}}Adult{{/showOld}}
+{{^showOld}}Teen{{/showOld}}!
+
+<hr/>
+<h2>Products</h2>
+
+<ul>
+{{#products}}
+    <li>{{title}} - $ {{price}}</li>
+{{/products}}
+</ul>
+<hr/>
+<h2>Frases do dia</h2>
+
+<ul>
+{{#frasesDoDia}}
+    <li>{{.}}</li>
+{{/frasesDoDia}}
+{{^frasesDoDia}}
+Nada para hoje
+{{/frasesDoDia}}
+
+</ul>
 
 </body>
 </html>
